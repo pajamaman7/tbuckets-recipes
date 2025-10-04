@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="libs/water.light.min.css">
 
     <style>
+        :root {
+            --bg: #282828;
+            --bg-alt: #3c3836;
+            --fg: #ebdbb2;
+            --fg-dim: #bdae93;
+            --accent-blue: #83a598;
+            --accent-orange: #fe8019;
+            --accent-yellow: #fabd2f;
+            --accent-green: #b8bb26;
+            --accent-aqua: #8ec07c;
+            --accent-red: #fb4934;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: system-ui, sans-serif;
+        }
+
         .container {
             display: none;
             max-width: 800px;
@@ -20,6 +39,7 @@
             padding: 0 16px 16px;
         }
 
+        /* Hide back link when printing */
         @media print {
             #back-link {
                 display: none;
@@ -28,12 +48,19 @@
 
         #back-link {
             margin-right: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        #back-link:hover {
+            color: var(--accent-aqua);
         }
 
         #back-icon {
             height: 28px;
             width: 28px;
             margin-bottom: -2px;
+            filter: invert(70%) sepia(15%) saturate(500%) hue-rotate(160deg);
         }
 
         #title-wrapper {
@@ -45,124 +72,91 @@
 
         #title {
             margin: 0;
+            color: var(--accent-yellow);
         }
 
         #subheader {
             font-style: italic;
-            color: #666;
+            color: var(--fg-dim);
             margin-top: -8px;
             margin-bottom: 16px;
         }
 
+        /* Info Box */
         #info-container {
-            background-color: #e3f2fd;
+            background-color: var(--bg-alt);
             padding: 8px 24px 8px;
             margin-top: 16px;
             border-radius: 8px;
-            border-left: 4px solid #2196f3;
+            border-left: 4px solid var(--accent-blue);
         }
 
         #info-container h2::before {
             content: "⏱️ ";
         }
 
+        /* Ingredients Box */
         #ingredients-container {
-            background-color: #eee;
+            background-color: #3c3836;
             padding: 8px 24px 16px;
             margin-top: 16px;
             border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
         }
 
         #ingredients-container h2::before {
             content: "📋 ";
         }
 
+        /* Steps Box */
+        #steps-container {
+            background-color: var(--bg-alt);
+            padding: 8px 24px 16px;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+
         #steps-container h2::before {
             content: "🔪 ";
         }
 
+        /* Notes Box */
         #notes-container {
-            background-color: #fff3e0;
+            background-color: #504945;
             padding: 8px 24px 16px;
             margin-top: 16px;
             border-radius: 8px;
-            border-left: 4px solid #ff9800;
+            border-left: 4px solid var(--accent-orange);
         }
 
         #notes-container h2::before {
             content: "💡 ";
         }
 
+        /* Based On Box */
         #based-on-container {
-            background-color: #f5f5f5;
+            background-color: #3c3836;
             padding: 8px 24px 16px;
             margin-top: 16px;
             border-radius: 8px;
             font-size: 0.9em;
+            color: var(--fg-dim);
         }
 
         #based-on-container h2::before {
             content: "🔗 ";
         }
 
+        /* Responsive Layout */
         @media print, screen and (min-width: 600px) {
-            /* Only apply grid layout to recipe container, not recipe list */
-            #recipe-container {
-                display: grid;
-                grid-template-columns: 1fr 320px;
-                gap: 16px;
-                align-items: start;
-            }
-
-            #recipe-container #title-wrapper, 
-            #recipe-container #subheader {
-                grid-column: 1 / -1;
-            }
-
-            #recipe-container #steps-container, 
-            #recipe-container #notes-container, 
-            #recipe-container #based-on-container {
-                grid-column: 1;
-            }
-
-            #recipe-container #info-container, 
-            #recipe-container #ingredients-container {
-                grid-column: 2;
-                width: 100%;
-                float: none;
-                margin: 0;
-            }
-
-            #recipe-container #info-container {
-                order: 1;
-            }
-
-            #recipe-container #ingredients-container {
-                order: 2;
-            }
-
-            #recipe-container #steps-container {
-                order: 3;
-            }
-
-            #recipe-container #notes-container {
-                order: 4;
-            }
-
-            #recipe-container #based-on-container {
-                order: 5;
-            }
-
-            /* Keep the original float layout for recipe list */
-            #recipe-list #info-container {
+            #info-container {
                 width: 320px;
                 float: right;
                 margin: 4px 0 16px 16px;
             }
 
-            #recipe-list #ingredients-container {
+            #ingredients-container {
                 width: 320px;
-                background-color: #eee;
                 float: right;
                 padding: 0px 24px 16px;
                 margin: 4px 0 16px 16px;
