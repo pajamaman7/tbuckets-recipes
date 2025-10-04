@@ -5,11 +5,9 @@
 * [Wonton Soup](/tbuckets-recipes/?recipe=wonton_soup) - Easy 15-minute soup loaded with veggies
 * [Beef and Broccoli](/tbuckets-recipes/?recipe=beef_and_broccoli) - Classic stir-fry in 30 minutes
 * [Mongolian Beef](/tbuckets-recipes/?recipe=mongolian_beef) - Crispy beef with less sugar than restaurant versions
-* [Honey Garlic Shrimp](/tbuckets-recipes/?recipe=honey_garlic_shrimp) - Quick Asian-inspired shrimp with orange
 * [Teriyaki Shrimp Rice Bowls](/tbuckets-recipes/?recipe=teriyaki_shrimp_bowls) - Easy teriyaki with customizable toppings
 * [Korean Beef Rice Bowls](/tbuckets-recipes/?recipe=korean_beef_bowls) - Ground beef with gochujang sauce
 * [Korean Shrimp Rice Bowls](/tbuckets-recipes/?recipe=korean_shrimp_bowls) - Shrimp with gochujang and spicy mayo
-* [Ginger-Basil Beef and Zucchini Skillet](/tbuckets-recipes/?recipe=ginger_basil_beef_skillet) - One-pan with bold Asian flavors
 * [Spicy California Shrimp Stack](/tbuckets-recipes/?recipe=shrimp_stack) - Sushi-inspired stacks with cucumber and avocado
 
 ## Mexican/Tex-Mex

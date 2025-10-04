@@ -141,16 +141,22 @@ a:hover {
     content: "🔗 ";
 }
 
-@media print, screen and (min-width: 600px) {
-    #info-container {
-        width: 320px;
-        /*float: right;*/
-        margin: 4px 0 16px 16px;
+@media screen and (min-width: 600px) {
+    #recipe-container {
+        display: grid;
+        grid-template-columns: 1fr 320px; /* main column + sidebar */
+        gap: 16px;
+        align-items: start;
     }
 
+    #info-container,
     #ingredients-container {
-        width: 320px;
-        /*float: right;*/
-        margin: 4px 0 16px 16px;
+        grid-column: 2; /* right column */
+    }
+
+    #steps-container,
+    #notes-container,
+    #based-on-container {
+        grid-column: 1; /* left column */
     }
 }
