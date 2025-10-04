@@ -1,0 +1,156 @@
+:root {
+    /* Gruvbox dark palette */
+    --bg-dark: #1d2021;
+    --bg: #282828;
+    --bg-light: #3c3836;
+    --fg: #ebdbb2;
+    --fg-dim: #d5c4a1;
+    --red: #fb4934;
+    --green: #b8bb26;
+    --yellow: #fabd2f;
+    --blue: #83a598;
+    --purple: #d3869b;
+    --aqua: #8ec07c;
+    --orange: #fe8019;
+    --gray: #a89984;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, sans-serif;
+}
+
+a {
+    color: var(--aqua);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--orange);
+}
+
+.container {
+    display: none;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px 16px;
+}
+
+@media print {
+    #back-link {
+        display: none;
+    }
+}
+
+#back-link {
+    margin-right: 8px;
+    color: var(--fg);
+}
+
+#back-icon {
+    height: 28px;
+    width: 28px;
+    margin-bottom: -2px;
+    stroke: var(--fg);
+}
+
+#title-wrapper {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+}
+
+#title {
+    margin: 0;
+    color: var(--yellow);
+}
+
+#subheader {
+    font-style: italic;
+    color: var(--fg-dim);
+    margin-top: -8px;
+    margin-bottom: 16px;
+}
+
+#info-container {
+    background-color: var(--bg-light);
+    color: var(--fg);
+    padding: 8px 24px 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--blue);
+}
+
+#info-container h2::before {
+    content: "⏱️ ";
+}
+
+#ingredients-container {
+    background-color: var(--bg-light);
+    color: var(--fg);
+    padding: 8px 24px 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--green);
+}
+
+#ingredients-container h2::before {
+    content: "📋 ";
+}
+
+#steps-container {
+    background-color: var(--bg-dark);
+    color: var(--fg);
+    padding: 8px 24px 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--orange);
+}
+
+#steps-container h2::before {
+    content: "🔪 ";
+}
+
+#notes-container {
+    background-color: var(--bg-light);
+    color: var(--fg);
+    padding: 8px 24px 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--purple);
+}
+
+#notes-container h2::before {
+    content: "💡 ";
+}
+
+#based-on-container {
+    background-color: var(--bg-light);
+    color: var(--fg-dim);
+    padding: 8px 24px 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--gray);
+    font-size: 0.9em;
+}
+
+#based-on-container h2::before {
+    content: "🔗 ";
+}
+
+@media print, screen and (min-width: 600px) {
+    #info-container {
+        width: 320px;
+        float: right;
+        margin: 4px 0 16px 16px;
+    }
+
+    #ingredients-container {
+        width: 320px;
+        float: right;
+        margin: 4px 0 16px 16px;
+    }
+}
