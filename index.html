@@ -12,157 +12,178 @@
     <link rel="stylesheet" href="libs/water.light.min.css">
 
     <style>
-        :root {
-            --bg: #282828;
-            --bg-alt: #3c3836;
-            --fg: #ebdbb2;
-            --fg-dim: #bdae93;
-            --accent-blue: #83a598;
-            --accent-orange: #fe8019;
-            --accent-yellow: #fabd2f;
-            --accent-green: #b8bb26;
-            --accent-aqua: #8ec07c;
-            --accent-red: #fb4934;
-        }
 
-        body {
-            background-color: var(--bg);
-            color: var(--fg);
-            font-family: system-ui, sans-serif;
-        }
+:root{
+  --bg: #282828;
+  --bg-alt: #3c3836;
+  --card-bg: #3c2f2f; /* subtle card alt */
+  --fg: #ebdbb2;
+  --fg-dim: #bdae93;
+  --accent-blue: #83a598;
+  --accent-aqua: #8ec07c;
+  --accent-orange: #fe8019;
+  --accent-yellow: #fabd2f;
+  --accent-green: #b8bb26;
+  --accent-red: #fb4934;
+  --muted-border: rgba(255,255,255,0.04);
+}
 
-        .container {
-            display: none;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 16px 16px;
-        }
+/* sensible reset for sizing (fixes many broken div-size issues) */
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.45; }
 
-        /* Hide back link when printing */
-        @media print {
-            #back-link {
-                display: none;
-            }
-        }
+/* Make container visible again (you previously had display:none) */
+.container {
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
 
-        #back-link {
-            margin-right: 8px;
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
+/* Top site header (logo + nav) */
+.site-header {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border: 1px solid var(--muted-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
 
-        #back-link:hover {
-            color: var(--accent-aqua);
-        }
+/* logo/title area */
+.logo {
+  display:flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.logo h1, #title {
+  margin: 0;
+  color: var(--accent-yellow);
+  font-size: 1.25rem;
+  letter-spacing: 0.2px;
+}
+.logo .subtitle, #subheader {
+  margin: 0;
+  color: var(--fg-dim);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: -2px;
+}
 
-        #back-icon {
-            height: 28px;
-            width: 28px;
-            margin-bottom: -2px;
-            filter: invert(70%) sepia(15%) saturate(500%) hue-rotate(160deg);
-        }
+/* simple nav */
+.site-nav {
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.site-nav a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all .12s ease;
+  border: 1px solid transparent;
+  background: transparent;
+}
+.site-nav a:hover { color: var(--accent-aqua); background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.02); }
+.site-nav a:focus { outline: 2px solid var(--accent-yellow); outline-offset: 3px; }
 
-        #title-wrapper {
-            margin-top: 16px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: baseline;
-        }
+/* default link styling for content */
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color .12s ease, border-color .12s ease;
+}
+a:hover { color: var(--accent-aqua); text-decoration: underline; border-bottom-color: rgba(255,255,255,0.04); }
+a:visited { color: var(--fg-dim); }
+a:focus-visible { outline: 2px solid var(--accent-yellow); outline-offset: 2px; }
 
-        #title {
-            margin: 0;
-            color: var(--accent-yellow);
-        }
+/* Grid layout to replace floats — recommended */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 360px);
+  gap: 16px;
+  align-items: start;
+}
 
-        #subheader {
-            font-style: italic;
-            color: var(--fg-dim);
-            margin-top: -8px;
-            margin-bottom: 16px;
-        }
+/* Main column (left) */
+.main-column {
+  min-width: 0; /* important for overflowing text in flex/grid children */
+}
 
-        /* Info Box */
-        #info-container {
-            background-color: var(--bg-alt);
-            padding: 8px 24px 8px;
-            margin-top: 16px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-blue);
-        }
+/* Sidebar column (right) — holds info and ingredients in order) */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
 
-        #info-container h2::before {
-            content: "⏱️ ";
-        }
+/* Card-like containers */
+#info-container,
+#ingredients-container,
+#steps-container,
+#notes-container,
+#based-on-container {
+  background-color: var(--bg-alt);
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-left: 4px solid transparent;
+  overflow: visible;
+}
 
-        /* Ingredients Box */
-        #ingredients-container {
-            background-color: #3c3836;
-            padding: 8px 24px 16px;
-            margin-top: 16px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-green);
-        }
+/* individual accents */
+#info-container { border-left-color: var(--accent-blue); }
+#ingredients-container { border-left-color: var(--accent-green); background-color: var(--card-bg); }
+#notes-container { border-left-color: var(--accent-orange); background-color: #504945; }
+#based-on-container { background-color: var(--card-bg); color: var(--fg-dim); }
 
-        #ingredients-container h2::before {
-            content: "📋 ";
-        }
+/* headings / icons */
+#info-container h2::before { content: "⏱️ "; }
+#ingredients-container h2::before { content: "📋 "; }
+#steps-container h2::before { content: "🔪 "; }
+#notes-container h2::before { content: "💡 "; }
+#based-on-container h2::before { content: "🔗 "; }
 
-        /* Steps Box */
-        #steps-container {
-            background-color: var(--bg-alt);
-            padding: 8px 24px 16px;
-            margin-top: 16px;
-            border-radius: 8px;
-        }
+h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--accent-orange);
+  font-size: 1.05rem;
+}
 
-        #steps-container h2::before {
-            content: "🔪 ";
-        }
+/* small screens: stack everything */
+@media (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .site-header { flex-direction: column; align-items: stretch; gap: 8px; }
+  .site-nav { justify-self: end; }
+}
 
-        /* Notes Box */
-        #notes-container {
-            background-color: #504945;
-            padding: 8px 24px 16px;
-            margin-top: 16px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-orange);
-        }
+/* print rules (keep original intent) */
+@media print {
+  #back-link { display:none; }
+}
 
-        #notes-container h2::before {
-            content: "💡 ";
-        }
+/* ===== Compatibility: quick float-fix if you kept the old float HTML =====
+   If your HTML still uses floated #info-container / #ingredients-container,
+   add this clearfix to the parent to restore proper parent height.
+*/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-        /* Based On Box */
-        #based-on-container {
-            background-color: #3c3836;
-            padding: 8px 24px 16px;
-            margin-top: 16px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            color: var(--fg-dim);
-        }
-
-        #based-on-container h2::before {
-            content: "🔗 ";
-        }
-
-        /* Responsive Layout */
-        @media print, screen and (min-width: 600px) {
-            #info-container {
-                width: 320px;
-                float: right;
-                margin: 4px 0 16px 16px;
-            }
-
-            #ingredients-container {
-                width: 320px;
-                float: right;
-                padding: 0px 24px 16px;
-                margin: 4px 0 16px 16px;
-                border-radius: 8px;
-            }
-        }
+/* Also ensure any floated elements are overridden by the new layout */
+#info-container[style*="float"], #ingredients-container[style*="float"] {
+  float: none !important;
+}
     </style>
 
     <script>
