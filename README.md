@@ -3,6 +3,8 @@
 A list of personal recipes in markdown format and the source-code to render them
 on a website.
 
+Copied from https://github.com/Bastian/recipes, then modified to change markdown read style, and colorcheme to gruvbox :)
+
 ## Format
 
 ### Recipes
@@ -16,19 +18,31 @@ the one shown below:
 
 A description of the recipe (or even better an image).
 
-## Ingredients
+## info  
+* bullet list
+* containing serving and time info
 
-A list with all ingredients. Can use all markdown feature including "smaller"
-headings.
+## ingredients
+### Component 1
+* takes 
+* some
+* ingredients
 
-## Instructions
+### Component 2
+* takes
+* more
+* ingredients
 
-A list with the instructions. Can use all markdown feature including "smaller"
-headings.
+## steps  
+1. A guide
+2. To the recipe
 
-## Images
+## notes  
+* Common modifications
+* Substitutions
 
-A list with images (optional).
+## based on  
+* Another Recipe
 ```
 
 The titles for ingredients and the instructions are not fixed and can be for
