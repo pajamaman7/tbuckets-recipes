@@ -24,10 +24,6 @@
             #back-link {
                 display: none;
             }
-
-            #image-container {
-                display: none;
-            }
         }
 
         #back-link {
@@ -51,17 +47,23 @@
             margin: 0;
         }
 
-        #description1 img {
-            border-radius: 8px;
+        #subheader {
+            font-style: italic;
+            color: #666;
+            margin-top: -8px;
+            margin-bottom: 16px;
         }
 
-        #description2 {
-            display: none;
+        #info-container {
+            background-color: #e3f2fd;
+            padding: 8px 24px 8px;
+            margin-top: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
         }
 
-        #description2 img {
-            border-radius: 8px;
-            max-width: calc(100% - 350px);
+        #info-container h2::before {
+            content: "⏱️ ";
         }
 
         #ingredients-container {
@@ -75,41 +77,48 @@
             content: "📋 ";
         }
 
-        #instructions-container h2::before {
+        #steps-container h2::before {
             content: "🔪 ";
         }
 
-        #image-container h2::before {
-            content: "📷 ";
-        }
-        
-        #image-container p img {
+        #notes-container {
+            background-color: #fff3e0;
+            padding: 8px 24px 16px;
+            margin-top: 16px;
             border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        #notes-container h2::before {
+            content: "💡 ";
+        }
+
+        #based-on-container {
+            background-color: #f5f5f5;
+            padding: 8px 24px 16px;
+            margin-top: 16px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        #based-on-container h2::before {
+            content: "🔗 ";
         }
 
         @media print, screen and (min-width: 600px) {
+            #info-container {
+                width: 320px;
+                float: right;
+                margin: 4px 0 16px 16px;
+            }
+
             #ingredients-container {
                 width: 320px;
                 background-color: #eee;
                 float: right;
                 padding: 0px 24px 16px;
                 margin: 4px 0 16px 16px;
-
                 border-radius: 8px;
-            }
-
-            #description1 {
-                display: none;
-            }
-
-            #description2 {
-                display: block;
-            }
-
-            #image-container p {
-                display: grid;
-                grid-template-columns: 50% 50%;
-                gap: 12px;
             }
         }
     </style>
@@ -135,17 +144,31 @@
         }
 
         async function parseMarkdown(markdown) {
-            const regexHeader = /(^|\n)(# (.+))([^#]+?)(## )/gm;
-            const headerExec = regexHeader.exec(markdown)
-            const title = headerExec[3];
-            const description = headerExec[4];
+            // Extract title (# TITLE)
+            const titleMatch = markdown.match(/^# (.+)/m);
+            const title = titleMatch ? titleMatch[1] : '';
 
-            const regexSubheading = /\n(## (.|\n)+?(?=\n## |$))/g;
-            const ingredients = regexSubheading.exec(markdown)[1];
-            const instructions = regexSubheading.exec(markdown)[1];
-            const images = regexSubheading.exec(markdown)?.[1];
+            // Extract optional subheader (line after title, before ##)
+            const subheaderMatch = markdown.match(/^# .+\n(.+?)\n##/m);
+            const subheader = subheaderMatch ? subheaderMatch[1] : '';
 
-            return [title, description, ingredients, instructions, images];
+            // Extract each section by heading
+            const infoMatch = markdown.match(/## info\s+([\s\S]+?)(?=\n## |$)/);
+            const info = infoMatch ? infoMatch[0] : '';
+
+            const ingredientsMatch = markdown.match(/## ingredients\s+([\s\S]+?)(?=\n## |$)/);
+            const ingredients = ingredientsMatch ? ingredientsMatch[0] : '';
+
+            const stepsMatch = markdown.match(/## steps\s+([\s\S]+?)(?=\n## |$)/);
+            const steps = stepsMatch ? stepsMatch[0] : '';
+
+            const notesMatch = markdown.match(/## notes\s+([\s\S]+?)(?=\n## |$)/);
+            const notes = notesMatch ? notesMatch[0] : '';
+
+            const basedOnMatch = markdown.match(/## based on\s+([\s\S]+?)$/);
+            const basedOn = basedOnMatch ? basedOnMatch[0] : '';
+
+            return [title, subheader, info, ingredients, steps, notes, basedOn];
         }
 
         async function init() {
@@ -153,28 +176,41 @@
 
             if (!recipe) {
                 const recipeList = await loadRecipeList();
-                 document.getElementById("recipe-list").innerHTML
+                document.getElementById("recipe-list").innerHTML
                     = md.render(recipeList);
                 document.getElementById("recipe-list").style.display = "block";
                 return;
             }
 
-            const [title, description, ingredients, instructions, images] = await parseMarkdown(recipe);
+            const [title, subheader, info, ingredients, steps, notes, basedOn] = await parseMarkdown(recipe);
             
             document.title = title;
 
             document.getElementById("title").innerHTML = title;
-            document.getElementById("description1").innerHTML
-                = md.render(description);
-            document.getElementById("description2").innerHTML
-                = md.render(description);
-            document.getElementById("ingredients-container").innerHTML 
-                = md.render(ingredients);
-            document.getElementById("instructions-container").innerHTML 
-                = md.render(instructions);
-            if (images !== undefined) {
-                document.getElementById("image-container").innerHTML 
-                = md.render(images);
+            
+            if (subheader) {
+                document.getElementById("subheader").innerHTML = subheader;
+                document.getElementById("subheader").style.display = "block";
+            }
+
+            if (info) {
+                document.getElementById("info-container").innerHTML = md.render(info);
+            }
+
+            if (ingredients) {
+                document.getElementById("ingredients-container").innerHTML = md.render(ingredients);
+            }
+
+            if (steps) {
+                document.getElementById("steps-container").innerHTML = md.render(steps);
+            }
+
+            if (notes) {
+                document.getElementById("notes-container").innerHTML = md.render(notes);
+            }
+
+            if (basedOn) {
+                document.getElementById("based-on-container").innerHTML = md.render(basedOn);
             }
 
             document.getElementById("recipe-container").style.display = "block";
@@ -194,11 +230,12 @@
             </a>
             <h1 id="title"></h1>
         </div>
-        <div id="description1"></div>
+        <div id="subheader" style="display: none;"></div>
+        <div id="info-container"></div>
         <div id="ingredients-container"></div>
-        <div id="description2"></div>
-        <div id="instructions-container"></div>
-        <div id="image-container"></div>
+        <div id="steps-container"></div>
+        <div id="notes-container"></div>
+        <div id="based-on-container"></div>
     </div>
     <div id="recipe-list" class="container"></div>
 </body>
