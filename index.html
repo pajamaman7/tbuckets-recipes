@@ -106,19 +106,46 @@
         }
 
         @media print, screen and (min-width: 600px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 320px;
+                gap: 16px;
+                align-items: start;
+            }
+
+            #title-wrapper, #subheader {
+                grid-column: 1 / -1;
+            }
+
+            #steps-container, #notes-container, #based-on-container {
+                grid-column: 1;
+            }
+
+            #info-container, #ingredients-container {
+                grid-column: 2;
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+
             #info-container {
-                width: 320px;
-                float: right;
-                margin: 4px 0 16px 16px;
+                order: 1;
             }
 
             #ingredients-container {
-                width: 320px;
-                background-color: #eee;
-                float: right;
-                padding: 0px 24px 16px;
-                margin: 4px 0 16px 16px;
-                border-radius: 8px;
+                order: 2;
+            }
+
+            #steps-container {
+                order: 3;
+            }
+
+            #notes-container {
+                order: 4;
+            }
+
+            #based-on-container {
+                order: 5;
             }
         }
     </style>
