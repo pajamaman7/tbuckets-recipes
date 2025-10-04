@@ -141,6 +141,7 @@ a:hover {
     content: "🔗 ";
 }
 
+
 @media screen and (min-width: 600px) {
     #recipe-container {
         display: grid;
@@ -149,15 +150,17 @@ a:hover {
         align-items: start;
     }
 
+    /* Right sidebar */
     #info-container,
     #ingredients-container {
-        grid-column: 2; /* right column */
+        grid-column: 2; 
     }
 
+    /* Main content column */
     #steps-container,
     #notes-container,
     #based-on-container {
-        grid-column: 1; /* left column */
+        grid-column: 1;
     }
 }
 
