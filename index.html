@@ -64,11 +64,13 @@
         async function init() {
             const recipe = await loadRecipe();
 
-            if (!recipe) {
+
+           if (!recipe) {
+                // Landing page: show recipe list
                 const recipeList = await loadRecipeList();
-                document.getElementById("recipe-list").innerHTML
-                    = md.render(recipeList);
-                document.getElementById("recipe-list").style.display = "block";
+                recipeContainer.style.display = "none";
+                recipeListContainer.innerHTML = md.render(recipeList);
+                recipeListContainer.style.display = "block";
                 return;
             }
 
