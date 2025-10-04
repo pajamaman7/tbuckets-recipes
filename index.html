@@ -65,12 +65,13 @@
             const recipe = await loadRecipe();
 
 
-           if (!recipe) {
-                // Landing page: show recipe list
+            if (!recipe) {
                 const recipeList = await loadRecipeList();
-                recipeContainer.style.display = "none";
-                recipeListContainer.innerHTML = md.render(recipeList);
-                recipeListContainer.style.display = "block";
+                document.getElementById("recipe-list").innerHTML
+                    = md.render(recipeList);
+                document.getElementById("recipe-list").style.display = "block";
+                document.getElementById("recipe-container").style.display = "none";
+                document.getElementById("recipe-list").style.display = "block";
                 return;
             }
 
