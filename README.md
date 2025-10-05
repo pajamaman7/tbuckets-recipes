@@ -3,7 +3,7 @@
 A list of personal recipes in markdown format and the source-code to render them
 on a website.
 
-Copied from https://github.com/Bastian/recipes, then modified to change markdown read style, and colorcheme to gruvbox :)
+Copied from https://github.com/Bastian/recipes, then modified to change markdown read style, and colorscheme to gruvbox :)
 
 ## Format
 
@@ -42,7 +42,7 @@ A description of the recipe (or even better an image).
 * Substitutions
 
 ## based on  
-* Another Recipe
+Some other Recipe - recipe.com
 ```
 
 The titles for ingredients and the instructions are not fixed and can be for

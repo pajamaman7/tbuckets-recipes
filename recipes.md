@@ -19,7 +19,7 @@
 * [Classic Ragu Bolognese](/tbuckets-recipes/?recipe=classic_bolognese) - Authentic slow-cooked sauce from Bon Appétit
 * [One-Pan Shrimp Scampi with Crispy Gnocchi](/tbuckets-recipes/?recipe=shrimp_scampi_gnocchi) - Ready in 25 minutes
 * [Marry Me Chicken](/tbuckets-recipes/?recipe=marry_me_chicken) - Creamy sun-dried tomato chicken
-* [Gnocchi Pizza](/tbuckets-recipes/?recipe=gnocchi_pizza) - Creamy sun-dried tomato chicken
+* [Gnocchi Pizza](/tbuckets-recipes/?recipe=gnocchi_pizza) - One-dish pizza lookalike
 
 ## French
 * [Chicken Thighs with Shallots in Red Wine Vinegar](/tbuckets-recipes/?recipe=chicken_thighs_shallots) - Lightened Poulet Au Vinaigre
