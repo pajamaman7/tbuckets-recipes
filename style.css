@@ -84,10 +84,6 @@ a:hover {
     border-left: 4px solid var(--blue);
 }
 
-#info-container h2::before {
-    content: "⏱️ ";
-}
-
 #ingredients-container {
     background-color: var(--bg-light);
     color: var(--fg);
@@ -95,10 +91,6 @@ a:hover {
     margin-top: 16px;
     border-radius: 8px;
     border-left: 4px solid var(--green);
-}
-
-#ingredients-container h2::before {
-    content: "📋 ";
 }
 
 #steps-container {
@@ -110,10 +102,6 @@ a:hover {
     border-left: 4px solid var(--orange);
 }
 
-#steps-container h2::before {
-    content: "🔪 ";
-}
-
 #notes-container {
     background-color: var(--bg-light);
     color: var(--fg);
@@ -121,10 +109,6 @@ a:hover {
     margin-top: 16px;
     border-radius: 8px;
     border-left: 4px solid var(--purple);
-}
-
-#notes-container h2::before {
-    content: "💡 ";
 }
 
 #based-on-container {
@@ -136,11 +120,6 @@ a:hover {
     border-left: 4px solid var(--gray);
     font-size: 0.9em;
 }
-
-#based-on-container h2::before {
-    content: "🔗 ";
-}
-
 
 @media screen and (min-width: 600px) {
     #recipe-container {
