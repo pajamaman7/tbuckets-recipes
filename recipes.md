@@ -9,6 +9,7 @@
 * [Korean Beef Rice Bowls](/tbuckets-recipes/?recipe=korean_beef_bowls) - Ground beef with gochujang sauce
 * [Korean Shrimp Rice Bowls](/tbuckets-recipes/?recipe=korean_shrimp_bowls) - Shrimp with gochujang and spicy mayo
 * [Spicy California Shrimp Stack](/tbuckets-recipes/?recipe=shrimp_stack) - Sushi-inspired stacks with cucumber and avocado
+* [Soy Honey Pork Ribs](/tbuckets-recipes/asian_short_ribs) 
 
 ## Mexican/Tex-Mex
 * [Mexican Chicken and Rice](/tbuckets-recipes/?recipe=mexican_chicken_rice_bowl) - Complete one-pot meal with chicken thighs
