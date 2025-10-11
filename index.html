@@ -55,15 +55,17 @@
             const notesMatch = markdown.match(/## notes\s+([\s\S]+?)(?=\n## |$)/);
             const notes = notesMatch ? notesMatch[0] : '';
 
+            const imagesMatch = markdown.match(/## images\s+([\s\S]+?)(?=\n## |$)/);
+            const images = imagesMatch ? imagesMatch[0] : '';
+
             const basedOnMatch = markdown.match(/## based on\s+([\s\S]+?)$/);
             const basedOn = basedOnMatch ? basedOnMatch[0] : '';
 
-            return [title, subheader, info, ingredients, steps, notes, basedOn];
+            return [title, subheader, info, ingredients, images, steps, notes, basedOn];
         }
 
         async function init() {
             const recipe = await loadRecipe();
-
 
             if (!recipe) {
                 const recipeList = await loadRecipeList();
@@ -75,7 +77,7 @@
                 return;
             }
 
-            const [title, subheader, info, ingredients, steps, notes, basedOn] = await parseMarkdown(recipe);
+            const [title, subheader, info, ingredients, images, steps, notes, basedOn] = await parseMarkdown(recipe);
             
             document.title = title;
 
@@ -92,6 +94,10 @@
 
             if (ingredients) {
                 document.getElementById("ingredients-container").innerHTML = md.render(ingredients);
+            }
+
+            if (images) {
+                document.getElementById("images-container").innerHTML = md.render(images);
             }
 
             if (steps) {
@@ -116,7 +122,7 @@
 <body>
     <div id="recipe-container" class="container">
         <div id="title-wrapper">
-            <a id="back-link" href="/tbuckets-recipes">
+            <a id="back-link" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" id="back-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
@@ -124,8 +130,14 @@
             <h1 id="title"></h1>
         </div>
         <div id="subheader" style="display: none;"></div>
-        <div id="info-container"></div>
-        <div id="ingredients-container"></div>
+        
+        <!-- Sidebar container for info, ingredients, and images -->
+        <div id="sidebar">
+            <div id="info-container"></div>
+            <div id="ingredients-container"></div>
+            <div id="images-container"></div>
+        </div>
+        
         <div id="steps-container"></div>
         <div id="notes-container"></div>
         <div id="based-on-container"></div>
