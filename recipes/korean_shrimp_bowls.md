@@ -34,6 +34,9 @@ Flavorful shrimp with gochujang sauce served over rice with vegetables and spicy
 * Lime wedges
 * Pickled red onions
 
+## images
+![](images/koreanshrimp.jpg)
+
 ## steps  
 1. **Make the Sauce:** Put the soy sauce, gochujang, honey, garlic, ginger, and lime juice in a bowl and whisk until combined. The gochujang is thick so it takes a minute to come together.
 2. **Make Spicy Mayo:** Mix 1/2 cup of the Korean sauce with the mayo and set aside as a sauce for the rice bowls.

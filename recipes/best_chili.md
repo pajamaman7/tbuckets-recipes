@@ -25,6 +25,9 @@ Hearty ground beef and bean chili with bacon - perfect comfort food for chilly n
 * 1 1/2 15-ounce cans of beans (use 1 kidney, 1/2 black, 1/2 pinto), drained and rinsed
 * 1 1/2 cups beef broth (or 1 cup beef broth and 1/2 cup pilsner beer)
 
+## images
+![Beef and broccoli in a wok](images/bestchili.jpg)
+
 ## steps  
 1. In a large Dutch oven over medium high heat, fry the bacon until crispy, stirring it frequently. Drain on a paper towel lined plate, then set aside until needed.
 2. Leave the bacon grease in the pan. Add the yellow onion, bell peppers, jalapeño peppers, and carrots and sauté until soft and almost caramelized, about 8 minutes, stirring occasionally. Add in the garlic and cook for 1 more minute.

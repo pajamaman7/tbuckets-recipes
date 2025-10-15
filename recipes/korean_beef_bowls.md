@@ -21,6 +21,9 @@ Easy and delicious Korean beef made with ground beef, served over rice with cucu
 * 1/2 tablespoon sesame seeds
 * 2 sliced scallions, white and green parts
 
+## images
+![](images/koreanbeef.jpg)
+
 ## steps  
 1. Combine the soy sauce, 2 tablespoons water, brown sugar, sesame oil and red pepper flakes in a small bowl.
 2. Heat a large deep nonstick skillet over high heat, spray with oil and add the ground beef. Cook, breaking the meat up with a wooden spoon until cooked through, about 5 minutes.

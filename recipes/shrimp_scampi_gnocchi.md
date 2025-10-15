@@ -17,6 +17,9 @@ Quick and flavorful meal ready in just 25 minutes
 * 1 lemon
 * 1/2 cup chopped parsley
 
+## images
+![](images/shrimpscampi.jpg)
+
 ## steps  
 1. In a large, preferably nonstick skillet, heat 2 tablespoons oil over medium-high. Add gnocchi to the pan, breaking up any that are stuck together. Cook for 10 to 12 minutes, tossing every 1 to 2 minutes, so they get golden and crispy all over. Transfer to a bowl or plate.
 2. In the same skillet over medium-high, add remaining 1 tablespoon oil and all of the butter, letting it melt for a few seconds. Add garlic and sauté until fragrant, 30 seconds to 1 minute.

@@ -12,6 +12,9 @@
 * 200g mozzarella, grated
 * Your favorite pizza toppings
 
+## images
+![](images/pizzagnocchi.jpg)
+
 ## steps
 1. Preheat oven to 400F. Heat the olive oil in a skillet, and fry the gnocchi until they just begin to show some color
 2. Reduce the heat and mix in the tomato sauce until warm. If your pan is not oven-safe, transfer to a deep pan.
