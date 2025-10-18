@@ -23,6 +23,7 @@
 
 ## French
 * [Chicken Thighs with Shallots in Red Wine Vinegar](?recipe=chicken_thighs_shallots) - Lightened Poulet Au Vinaigre
+* [Beef Stew](?recipe=beef-stew) - Hearty beef stew with potatoes and carrots
 
 ## American/Comfort Food
 * [The Best Homemade Chili](?recipe=best_chili) - Hearty beef and bean chili with bacon (Half Batch)
