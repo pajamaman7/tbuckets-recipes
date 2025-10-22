@@ -15,10 +15,35 @@
     --gray: #a89984;
 }
 
+.lightmode {
+    /* Gruvbox light palette */
+    --bg: #f2e5bc;
+    --bg: #fbf1c7;
+    --bg-light: #ebdbb2;
+
+    --fg: #282828;
+    --fg-dim: #3c3836;
+
+    --red: #9d0006;
+    --green: #79740e;
+    --yellow: #b57614;
+    --blue: #076678;
+    --purple: #8f3f71;
+    --aqua: #427b58;
+    --orange: #af3a03;
+    --gray: #928374;
+}
+
 body {
     background-color: var(--bg);
     color: var(--fg);
-    font-family: system-ui, sans-serif;
+    font-family: 'Fira Sans', system-ui, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 10px;
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility
 }
 
 a {
@@ -28,6 +53,10 @@ a {
 
 a:hover {
     color: var(--orange);
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .container {
@@ -66,6 +95,36 @@ a:hover {
     stroke: var(--fg);
 }
 
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--fg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+#theme-switch svg {
+    fill: var(--bg);
+}
+
+#theme-switch svg:last-child {
+    display: none
+}
+
+#theme-switch svg:first-child {
+    display: none
+}
+
+#theme-switch svg:last-child {
+    display: block
+}
+
 #title-wrapper {
     margin-top: 16px;
     margin-bottom: 8px;
@@ -76,6 +135,7 @@ a:hover {
 #title {
     margin: 0;
     color: var(--yellow);
+    padding-left: 20px;
 }
 
 #subheader {
@@ -178,36 +238,40 @@ a:hover {
 @media screen and (min-width: 768px) {
     #recipe-container {
         display: grid;
-        grid-template-columns: 1fr 350px; /* main column + sidebar */
+        grid-template-columns: 1fr 350px;
+        /* main column + sidebar */
         gap: 24px;
         align-items: start;
     }
-    
+
     #title-wrapper {
-        grid-column: 1 / -1; /* Span full width */
+        grid-column: 1 / -1;
+        /* Span full width */
     }
-    
+
     #subheader {
-        grid-column: 1 / -1; /* Span full width */
+        grid-column: 1 / -1;
+        /* Span full width */
     }
-    
+
     /* Sidebar on the right */
     #sidebar {
         grid-column: 2;
-        grid-row: 3 / span 10; /* Start at row 3, span many rows */
+        grid-row: 3 / span 10;
+        /* Start at row 3, span many rows */
     }
-    
+
     /* Main content on the left */
     #steps-container {
         grid-column: 1;
         grid-row: 3;
     }
-    
+
     #notes-container {
         grid-column: 1;
         grid-row: 4;
     }
-    
+
     #based-on-container {
         grid-column: 1;
         grid-row: 5;
@@ -218,13 +282,17 @@ a:hover {
     #sidebar {
         display: block;
     }
-    
+
     #recipe-container {
         display: block !important;
     }
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     color: var(--yellow);
     font-weight: 600;
     margin-top: 1.2em;
@@ -239,11 +307,13 @@ h3 {
     color: var(--aqua);
 }
 
-strong, b {
+strong,
+b {
     color: var(--fg);
 }
 
-em, i {
+em,
+i {
     color: var(--fg-dim);
 }
 
