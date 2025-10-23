@@ -92,7 +92,10 @@ button:hover {
     height: 28px;
     width: 28px;
     margin-bottom: -2px;
-    stroke: var(--fg);
+}
+
+#back-icon svg {
+    fill: var(--bg);
 }
 
 #theme-switch {
