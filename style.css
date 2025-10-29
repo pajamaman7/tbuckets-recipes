@@ -1,5 +1,4 @@
 :root {
-    /* Gruvbox dark palette */
     --bg-dark: #1d2021;
     --bg: #282828;
     --bg-light: #3c3836;
@@ -16,7 +15,6 @@
 }
 
 .lightmode {
-    /* Gruvbox light palette */
     --bg: #f2e5bc;
     --bg: #fbf1c7;
     --bg-light: #ebdbb2;
@@ -233,62 +231,8 @@ button:hover {
     content: "🔗 ";
 }
 
-/* Sidebar layout - info, ingredients, and images on the right */
 #sidebar {
     display: block;
-}
-
-@media screen and (min-width: 768px) {
-    #recipe-container {
-        display: grid;
-        grid-template-columns: 1fr 350px;
-        /* main column + sidebar */
-        gap: 24px;
-        align-items: start;
-    }
-
-    #title-wrapper {
-        grid-column: 1 / -1;
-        /* Span full width */
-    }
-
-    #subheader {
-        grid-column: 1 / -1;
-        /* Span full width */
-    }
-
-    /* Sidebar on the right */
-    #sidebar {
-        grid-column: 2;
-        grid-row: 3 / span 10;
-        /* Start at row 3, span many rows */
-    }
-
-    /* Main content on the left */
-    #steps-container {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    #notes-container {
-        grid-column: 1;
-        grid-row: 4;
-    }
-
-    #based-on-container {
-        grid-column: 1;
-        grid-row: 5;
-    }
-}
-
-@media print {
-    #sidebar {
-        display: block;
-    }
-
-    #recipe-container {
-        display: block !important;
-    }
 }
 
 h1,

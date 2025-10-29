@@ -31,4 +31,4 @@
 ## American/Comfort Food
 * [The Best Homemade Chili](?recipe=best_chili) - Hearty beef and bean chili with bacon
 * [Hasselback Kielbasa](?recipe=hasselback_kielbasa) - Roasted sausage with vegetables and honey mustard
-* [Old-Fashioned Beef Stew](?recipe=beef-stew) - Classic beef stew with potatoes and carrots
+* [Old-Fashioned Beef Stew](?recipe=beef_stew) - Classic beef stew with potatoes and carrots
