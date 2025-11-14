@@ -14,12 +14,7 @@ Hearty ground beef and bean chili with bacon - perfect comfort food for chilly n
 * 2-3 cloves garlic, minced
 * 1 pound lean ground beef
 * 1 teaspoon light brown sugar
-* 1 1/4 teaspoons salt
-* 1/4 teaspoon black pepper
-* 1 1/2 teaspoons chili powder
-* 1 teaspoon ground cumin
-* 1/2 teaspoon garlic powder
-* 1/4 teaspoon cayenne pepper
+* 1 packet (~30g) taco seasoning
 * 1 3-ounce can tomato paste (half of 6-ounce can)
 * 1 14-ounce can crushed tomatoes with basil (half of 28-ounce can)
 * 1 1/2 15-ounce cans of beans (use 1 kidney, 1/2 black, 1/2 pinto), drained and rinsed

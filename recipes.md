@@ -10,6 +10,8 @@
 * [Korean Beef Rice Bowls](?recipe=korean_beef_bowls) - Ground beef with gochujang sauce
 * [Korean Shrimp Rice Bowls](?recipe=korean_shrimp_bowls) - Shrimp with gochujang and spicy mayo
 * [Spicy California Shrimp Stack](?recipe=shrimp_stack) - Sushi-inspired stacks with cucumber and avocado
+* [Peanut Butter Fried Chicken](?recipe=peanut_butter_chicken) - Quick fried chicken with a peanut sauce
+* [Chinese Pork Rib Soup](?recipe=pork_rib_soup) - 1 hour simple pork soup
 
 ## Mexican
 * [Mexican Chicken and Rice](?recipe=mexican_chicken_rice_bowl) - Complete one-pot meal with chicken thighs
@@ -24,11 +26,18 @@
 
 ## French
 * [Chicken Thighs with Shallots in Red Wine Vinegar](?recipe=chicken_thighs_shallots) - Lightened Poulet Au Vinaigre
+* [French Onion Soup](?recipe=french_onion_soup) - Classic French soup
 
 ## Spanish
 * [Chorizo and Potato Stew](?recipe=chorizo_potato_stew) - Classic Patatas a la Riojana
 
 ## American/Comfort Food
 * [The Best Homemade Chili](?recipe=best_chili) - Hearty beef and bean chili with bacon
-* [Hasselback Kielbasa](?recipe=hasselback_kielbasa) - Roasted sausage with vegetables and honey mustard
 * [Old-Fashioned Beef Stew](?recipe=beef_stew) - Classic beef stew with potatoes and carrots
+
+## Ukranian
+* [Hasselback Kielbasa](?recipe=hasselback_kielbasa) - Roasted sausage with vegetables and honey mustard
+* [Borscht](?recipe=borscht) - Family Borscht recipe
+
+## Other
+* [Chicken Lemon Stew](?recipe=chicken_lemon_stew)
