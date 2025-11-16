@@ -16,6 +16,7 @@
 ## Mexican
 * [Mexican Chicken and Rice](?recipe=mexican_chicken_rice_bowl) - Complete one-pot meal with chicken thighs
 * [Chicken Taco Poblano Rice Bowls](?recipe=chicken_taco_bowls) - Quick taco bowls with homemade seasoning
+* [Beef Tacos](?recipe=beef_tacos) - Spiced beef taco meat with refried beans
 
 ## Italian
 * [Classic Ragu Bolognese](?recipe=classic_bolognese) - Authentic slow-cooked sauce 
