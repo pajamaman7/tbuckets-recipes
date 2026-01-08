@@ -89,7 +89,7 @@ async function init() {
     }
 
     if (notes) {
-        document.getElementById("notes-container").innerHTML = md.render(notes);
+        // document.getElementById("notes-container").innerHTML = md.render(notes);
     }
 
     if (basedOn) {
